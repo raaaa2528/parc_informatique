@@ -1,0 +1,12 @@
+"""Enumérations utilisées dans le domaine du parc informatique réseau."""
+
+from enum import Enum, auto
+
+
+class TypeEquipement(Enum):
+    """Nature d'un équipement réseau."""
+
+    ROUTEUR = "ROUTEUR"
+    SWITCH = "SWITCH"
+    FIREWALL = "FIREWALL"
+    POINT_ACCES = "POINT_ACCES"
