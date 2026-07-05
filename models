@@ -10,3 +10,20 @@ class TypeEquipement(Enum):
     SWITCH = "SWITCH"
     FIREWALL = "FIREWALL"
     POINT_ACCES = "POINT_ACCES"
+
+
+class EtatEquipement(Enum):
+    """Etat opérationnel courant d'un équipement réseau."""
+
+    ACTIF = "ACTIF"
+    INACTIF = "INACTIF"
+    EN_PANNE = "EN_PANNE"
+    MAINTENANCE = "MAINTENANCE"
+
+
+class StatutIncident(Enum):
+    """Cycle de vie d'un incident technique déclaré sur un équipement."""
+
+    OUVERT = auto()
+    EN_COURS = auto()
+    RESOLU = auto()
