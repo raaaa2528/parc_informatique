@@ -2,7 +2,7 @@
 
 Projet de fin de semestre — Module **POO & Persistance des données**
 ISI Dakar — Licence 2 Réseaux Informatiques — Année 2025-2026
-Formateur : M. HAMANE — Sujet A
+Professeur : M. HAMANE — Sujet A
 
 ## Description
 
