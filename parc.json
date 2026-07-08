@@ -1,0 +1,102 @@
+{
+  "sites": [
+    {
+      "nom": "Siège Dakar",
+      "ville": "Dakar",
+      "equipements": [
+        {
+          "nom": "RT-DKR-01",
+          "ip": "10.0.0.1",
+          "type_equipement": "ROUTEUR",
+          "etat": "ACTIF",
+          "incidents": [],
+          "table_routage_taille": 12
+        },
+        {
+          "nom": "SW-DKR-01",
+          "ip": "10.0.0.2",
+          "type_equipement": "SWITCH",
+          "etat": "EN_PANNE",
+          "incidents": [
+            {
+              "id": 1,
+              "description": "Port 12 ne transmet plus de données.",
+              "statut": "RESOLU",
+              "date_creation": "2026-07-08T22:26:26.253063",
+              "date_resolution": "2026-07-08T22:26:26.254070"
+            },
+            {
+              "id": 3,
+              "description": "Redémarrage intempestif du switch.",
+              "statut": "OUVERT",
+              "date_creation": "2026-07-08T22:26:26.254070",
+              "date_resolution": null
+            }
+          ],
+          "nombre_ports": 48,
+          "ports_actifs": 0
+        },
+        {
+          "nom": "FW-DKR-01",
+          "ip": "10.0.0.3",
+          "type_equipement": "FIREWALL",
+          "etat": "EN_PANNE",
+          "incidents": [
+            {
+              "id": 2,
+              "description": "Règle NAT mal appliquée après reboot.",
+              "statut": "EN_COURS",
+              "date_creation": "2026-07-08T22:26:26.254070",
+              "date_resolution": null
+            }
+          ],
+          "regles": [
+            "deny all",
+            "allow 443"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Agence Thiès",
+      "ville": "Thiès",
+      "equipements": [
+        {
+          "nom": "RT-THS-01",
+          "ip": "10.1.0.1",
+          "type_equipement": "ROUTEUR",
+          "etat": "EN_PANNE",
+          "incidents": [
+            {
+              "id": 4,
+              "description": "Perte de connectivité WAN intermittente.",
+              "statut": "OUVERT",
+              "date_creation": "2026-07-08T22:26:26.254580",
+              "date_resolution": null
+            }
+          ],
+          "table_routage_taille": 6
+        },
+        {
+          "nom": "AP-THS-01",
+          "ip": "10.1.0.4",
+          "type_equipement": "POINT_ACCES",
+          "etat": "ACTIF",
+          "incidents": [],
+          "canal": 11,
+          "ssid": "ISI-THIES",
+          "clients_connectes": 0
+        },
+        {
+          "nom": "SW-THS-01",
+          "ip": "10.1.0.2",
+          "type_equipement": "SWITCH",
+          "etat": "ACTIF",
+          "incidents": [],
+          "nombre_ports": 24,
+          "ports_actifs": 0
+        }
+      ]
+    }
+  ]
+}
