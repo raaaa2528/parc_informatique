@@ -1,0 +1,74 @@
+classDiagram
+    class EquipementBase {
+        <<abstract>>
+        +nom str
+        +ip str
+        +etat EtatEquipement
+        +ping()* bool
+        +configurer()*
+        +signaler_incident(description) Incident
+    }
+    class Routeur {
+        +table_routage_taille int
+    }
+    class Switch {
+        +nombre_ports int
+    }
+    class Firewall {
+        +regles List
+    }
+    class PointAcces {
+        +canal int
+        +ssid str
+    }
+    EquipementBase <|-- Routeur
+    EquipementBase <|-- Switch
+    EquipementBase <|-- Firewall
+    EquipementBase <|-- PointAcces
+
+    class Site {
+        +nom str
+        +ville str
+        +ajouter_equipement(equipement)
+        +equipements_en_panne() List
+    }
+    Site "1" o-- "many" EquipementBase : agregation
+
+    class Incident {
+        +id int
+        +description str
+        +statut StatutIncident
+        +prendre_en_charge()
+        +resoudre()
+    }
+    EquipementBase "1" *-- "many" Incident : composition
+
+    class ParcService {
+        +ajouter_site(site)
+        +rapport_etat_parc() dict
+    }
+    ParcService "1" o-- "many" Site
+
+    class TypeEquipement {
+        <<enumeration>>
+        ROUTEUR
+        SWITCH
+        FIREWALL
+        POINT_ACCES
+    }
+    class EtatEquipement {
+        <<enumeration>>
+        ACTIF
+        INACTIF
+        EN_PANNE
+        MAINTENANCE
+    }
+    class StatutIncident {
+        <<enumeration>>
+        OUVERT
+        EN_COURS
+        RESOLU
+    }
+    EquipementBase ..> TypeEquipement
+    EquipementBase ..> EtatEquipement
+    Incident ..> StatutIncident
